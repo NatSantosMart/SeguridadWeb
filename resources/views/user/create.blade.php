@@ -68,11 +68,11 @@
                             <input type="text" class="form-control" name="telefono" value="{{old('telefono')}}"/>
                         </div>
                         <div class="col-6">
-                            <label for="country">País:</label>
-                            <select class="form-control" name="country">
+                            <label for="pais">País:</label>
+                            <select class="form-control" name="pais">
                                 <option value="">Selecciona un país</option>
                                 @foreach ($countries as $id => $name)
-                                    <option value="{{ $id }}">{{ $name }}</option>
+                                    <option value="{{ $name }}">{{ $name }}</option>
                                 @endforeach
                             </select>
                         </div>
