@@ -17,7 +17,7 @@
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            <h5>Error</h5>
+                            <h5>Error:</h5>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -29,11 +29,11 @@
                     <div class="form-group row mt-4">
                         <div class="col-6">
                             <label for="name">Nombre:</label>
-                            <input type="text" class="form-control" name="name" value="{{old('name')}}"/>
+                            <input type="text" class="form-control" name="nombre" value="{{old('nombre')}}"/>
                         </div>
                         <div class="col-6">
                             <label for="surnames">Apellidos:</label>
-                            <input type="text" class="form-control" name="surnames" value="{{old('surnames')}}"/>
+                            <input type="text" class="form-control" name="apellidos" value="{{old('apellidos')}}"/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
@@ -49,33 +49,39 @@
                     <div class="form-group row mt-4">
                         <div class="col-6">
                             <label for="password">Contraseña:</label>
-                            <input type="text" class="form-control" name="password" value="{{old('password')}}"/>
+                            <input type="text" class="form-control" name="contraseña" value="{{old('contraseña')}}"/>
                         </div>
                         <div class="col-6">
-                            <label for="repeatPassword">Contraseña repetida:</label>
-                            <input type="text" class="form-control" name="repeatPassword" id="repeatPassword" value="{{old('repeatPassword')}}"/>
+                            <label for="repetirContraseña">Contraseña repetida:</label>
+                            <input type="text" class="form-control" name="repeatPassword" id="repetirContraseña" value="{{old('repeatPassword')}}"/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <div class="col-6">
                             <label for="phone">Teléfono:</label>
-                            <input type="text" class="form-control" name="phone" value="{{old('phone')}}"/>
+                            <input type="text" class="form-control" name="telefono" value="{{old('telefono')}}"/>
                         </div>
                         <div class="col-6">
                             <label for="country">País:</label>
-                            <input type="text" class="form-control" name="country" value="{{old('country')}}"/>
+                            <select class="form-control" name="country">
+                                <option value="">Selecciona un país</option>
+                                @foreach ($countries as $id => $name)
+                                    <option value="{{ $id }}">{{ $name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group row mt-4">
+                        <div class="col-12">
+                            <label for="iban">Número de cuenta bancaria:</label>
+                            <input type="text" class="form-control" name="iban" value="{{old('iban')}}"/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <div class="col-12">
-                            <label for="IBAN">Número de cuenta bancaria:</label>
-                            <input type="text" class="form-control" name="IBAN" value="{{old('IBAN')}}"/>
-                        </div>
-                    </div>
-                    <div class="form-group row mt-4">
-                        <div class="col-12">
-                            <label for="aboutYou">Sobre ti:</label>
-                            <textarea type="text" class="form-control" name="aboutYou" value="{{old('aboutYou')}}"></textarea>
+                            <label for="sobreTi">Sobre ti:</label>
+                            <textarea type="text" class="form-control" name="sobreTi" value="{{old('sobreTi')}}"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
