@@ -35,31 +35,31 @@
                     <div class="form-group row mt-4">
                         <div class="col-6">
                             <label for="name">Nombre:</label>
-                            <input type="text" class="form-control" name="nombre" value="{{old('nombre')}}"/>
+                            <input type="text" class="form-control" name="nombre" value="{{old('nombre')}}" required/>
                         </div>
                         <div class="col-6">
                             <label for="surnames">Apellidos:</label>
-                            <input type="text" class="form-control" name="apellidos" value="{{old('apellidos')}}"/>
+                            <input type="text" class="form-control" name="apellidos" value="{{old('apellidos')}}" required/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <div class="col-6">
                             <label for="dni">Dni:</label>
-                            <input type="text" class="form-control" name="dni" value="{{old('dni')}}"/>
+                            <input type="text" class="form-control" name="dni" value="{{old('dni')}}" required/>
                         </div>
                         <div class="col-6">
                             <label for="email">Email:</label>
-                            <input type="text" class="form-control" name="email" value="{{old('email')}}"/>
+                            <input type="text" class="form-control" name="email" value="{{old('email')}}" required/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <div class="col-6">
                             <label for="contraseña">Contraseña:</label>
-                            <input type="text" class="form-control" name="contraseña" value="{{old('contraseña')}}"/>
+                            <input type="text" class="form-control" name="contraseña" value="{{old('contraseña')}}" required/>
                         </div>
                         <div class="col-6">
                             <label for="contraseñaRepetida">Contraseña repetida:</label>
-                            <input type="text" class="form-control" name="contraseñaRepetida" id="contraseñaRepetida" value="{{old('contraseñaRepetida')}}"/>
+                            <input type="text" class="form-control" name="contraseñaRepetida" id="contraseñaRepetida" value="{{old('contraseñaRepetida')}}" required/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
@@ -81,7 +81,7 @@
                     <div class="form-group row mt-4">
                         <div class="col-12">
                             <label for="iban">Número de cuenta bancaria:</label>
-                            <input type="text" class="form-control" name="iban" value="{{old('iban')}}"/>
+                            <input type="text" class="form-control" name="iban" value="{{old('iban')}}" required/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
