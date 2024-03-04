@@ -15,6 +15,12 @@
                         <h1 class="text-center">Crear usuario</h1>
                     </div>
 
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <h5>Error:</h5>
@@ -48,12 +54,12 @@
                     </div>
                     <div class="form-group row mt-4">
                         <div class="col-6">
-                            <label for="password">Contraseña:</label>
+                            <label for="contraseña">Contraseña:</label>
                             <input type="text" class="form-control" name="contraseña" value="{{old('contraseña')}}"/>
                         </div>
                         <div class="col-6">
                             <label for="repetirContraseña">Contraseña repetida:</label>
-                            <input type="text" class="form-control" name="repeatPassword" id="repetirContraseña" value="{{old('repeatPassword')}}"/>
+                            <input type="text" class="form-control" name="repetirContraseña" id="repetirContraseña" value="{{old('repetirContraseña')}}"/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
@@ -97,7 +103,7 @@
     </div>
     <script>
         // Desactivar el pegado en el campo de contraseña repetida
-        document.getElementById('repeatPassword').addEventListener('paste', function(e) {
+        document.getElementById('repetirContraseña').addEventListener('paste', function(e) {
             e.preventDefault();
             alert('No se permite pegar en este campo.');
         });

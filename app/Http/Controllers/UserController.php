@@ -18,16 +18,16 @@ class UserController extends Controller
     }
 
     public function storeUser(Request $request){
-        $nombre = $request->get('name'); 
-        $apellidos = $request->get('surnames'); 
+        $nombre = $request->get('nombre'); 
+        $apellidos = $request->get('apellidos'); 
         $dni = $request->get('dni'); 
         $email = $request->get('email'); 
-        $contraseña = $request->get('password'); 
-        $repetirContraseña = $request->get('repeatPassword'); 
-        $telefono = $request->get('phone'); 
-        $pais = $request->get('country'); 
-        $iban = $request->get('IBAN'); 
-        $sobreTi = $request->get('aboutYou');  
+        $contraseña = $request->get('contraseña'); 
+        $repetirContraseña = $request->get('repetirContraseña'); 
+        $telefono = $request->get('telefono'); 
+        $pais = $request->get('pais'); 
+        $iban = $request->get('iban'); 
+        $sobreTi = $request->get('sobreTi');  
 
         $request->validate([
             'nombre' => 'required|min:2|max:20|regex:/^[^0-9]+$/',
@@ -37,20 +37,28 @@ class UserController extends Controller
             'contraseña' => 'required',
             'repetirContraseña' => 'required',
             'telefono' => 'min:9|max:12|regex:/^[0-9+]{9,12}$/', 
-            'iban' => 'required|regex:/^ES\d{2}\s\d{4}\s\d{4}\s\d{2}\s\d{10}$/', 
-            'sobreTi' => 'required|min:20|max:250|',
+            'iban' => 'required|regex:/^ES\d{2}\d{4}\d{4}\d{2}\d{10}$/', 
+            'sobreTi' => 'nullable|min:20|max:250|',
         ]); 
 
         $user = new User; 
-        $user -> name = $name; 
-        $user -> surnames = $surnames; 
+        $user -> name = $nombre; 
+        $user -> surnames = $apellidos; 
         $user -> dni = $dni; 
         $user -> email = $email; 
-        $user -> password = $password; 
-        $user -> phone = $phone; 
-        $user -> country = $country; 
-        $user -> IBAN = $IBAN; 
-        $user -> aboutYou = $aboutYou; 
+        $user -> password = $contraseña; 
+        $user -> IBAN = $iban; 
+
+        //Campos opcionales
+        if($pais != "Selecciona un país"){
+            $user -> country = $pais; 
+        }
+        if($pais != null){
+            $user -> aboutYou = $sobreTi; 
+        }
+        if($telefono != null){
+            $user -> phone = $telefono; 
+        }
 
         $user->save();
 

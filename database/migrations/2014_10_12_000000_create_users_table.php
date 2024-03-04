@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('country')->nullable(); 
             $table->string('IBAN', 24); 
             $table->string('aboutYou', 250)->nullable(); 
+            $table->timestamps();
         });
     }
 
