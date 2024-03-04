@@ -58,8 +58,8 @@
                             <input type="text" class="form-control" name="contraseña" value="{{old('contraseña')}}"/>
                         </div>
                         <div class="col-6">
-                            <label for="repetirContraseña">Contraseña repetida:</label>
-                            <input type="text" class="form-control" name="repetirContraseña" id="repetirContraseña" value="{{old('repetirContraseña')}}"/>
+                            <label for="contraseñaRepetida">Contraseña repetida:</label>
+                            <input type="text" class="form-control" name="contraseñaRepetida" id="contraseñaRepetida" value="{{old('contraseñaRepetida')}}"/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
@@ -72,10 +72,10 @@
                             <select class="form-control" name="pais">
                                 <option value="">Selecciona un país</option>
                                 @foreach ($countries as $id => $name)
-                                    <option value="{{ $name }}">{{ $name }}</option>
+                                    <option value="{{ $name }}" {{ old('pais') == $name ? 'selected' : '' }}>{{ $name }}</option>
                                 @endforeach
                             </select>
-                        </div>
+                        </div>                        
                         
                     </div>
                     <div class="form-group row mt-4">
@@ -87,7 +87,7 @@
                     <div class="form-group row mt-4">
                         <div class="col-12">
                             <label for="sobreTi">Sobre ti:</label>
-                            <textarea type="text" class="form-control" name="sobreTi" value="{{old('sobreTi')}}"></textarea>
+                            <textarea type="text" class="form-control" name="sobreTi">{{ old('sobreTi') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -103,7 +103,7 @@
     </div>
     <script>
         // Desactivar el pegado en el campo de contraseña repetida
-        document.getElementById('repetirContraseña').addEventListener('paste', function(e) {
+        document.getElementById('contraseñaRepetida').addEventListener('paste', function(e) {
             e.preventDefault();
             alert('No se permite pegar en este campo.');
         });

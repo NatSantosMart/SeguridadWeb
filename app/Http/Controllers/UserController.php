@@ -23,7 +23,7 @@ class UserController extends Controller
         $dni = $request->get('dni'); 
         $email = $request->get('email'); 
         $contraseña = $request->get('contraseña'); 
-        $repetirContraseña = $request->get('repetirContraseña'); 
+        $contraseñaRepetida = $request->get('contraseñaRepetida'); 
         $telefono = $request->get('telefono'); 
         $pais = $request->get('pais'); 
         $iban = $request->get('iban'); 
@@ -35,8 +35,8 @@ class UserController extends Controller
             'dni' => 'required|regex:/^\d{8}[A-Za-z]$/',
             'email' => 'required|email|unique:users|', 
             'contraseña' => 'required',
-            'repetirContraseña' => 'required',
-            'telefono' => 'nullable|min:9|max:12|regex:/^[0-9+]{9,12}$/', 
+            'contraseñaRepetida' => 'required|same:contraseña',          
+            'telefono' => 'nullable|regex:/^[0-9+]{9,12}$/', 
             'iban' => 'required|regex:/^ES\d{2}\d{4}\d{4}\d{2}\d{10}$/', 
             'sobreTi' => 'nullable|min:20|max:250|',
         ]); 
