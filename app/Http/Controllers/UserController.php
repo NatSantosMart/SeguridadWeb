@@ -53,7 +53,7 @@ class UserController extends Controller
         if($pais != "Selecciona un país"){
             $user -> country = $pais; 
         }
-        if($pais != null){
+        if($aboutYou != null){
             $user -> aboutYou = $sobreTi; 
         }
         if($telefono != null){
