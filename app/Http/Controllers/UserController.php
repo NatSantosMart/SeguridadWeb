@@ -17,6 +17,11 @@ class UserController extends Controller
         return view("user.create", compact('countries')); // Pasar los países a la vista
     }
 
+    public function showLoginForm(){
+        return view("user.login"); 
+    }
+
+
     public function storeUser(Request $request){
         $nombre = $request->get('nombre'); 
         $apellidos = $request->get('apellidos'); 
@@ -27,7 +32,7 @@ class UserController extends Controller
         $telefono = $request->get('telefono'); 
         $pais = $request->get('pais'); 
         $iban = $request->get('iban'); 
-        $sobreTi = $request->get('sobreTi');  
+        $sobreTi = $request->get('sobreTi'); 
 
         $request->validate([
             'nombre' => 'required|min:2|max:20|regex:/^[^0-9]+$/',
@@ -53,9 +58,10 @@ class UserController extends Controller
         if($pais != "Selecciona un país"){
             $user -> country = $pais; 
         }
-        if($aboutYou != null){
-            $user -> aboutYou = $sobreTi; 
+        if(!empty($sobreTi)){
+            $user->aboutYou = $sobreTi; 
         }
+        
         if($telefono != null){
             $user -> phone = $telefono; 
         }
