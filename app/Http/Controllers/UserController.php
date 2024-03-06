@@ -64,4 +64,25 @@ class UserController extends Controller
 
         return redirect()->route('user.create')->with('success', '¡Usuario creado correctamente!'); 
     }
+
+    public function login(Request $request): Response
+    {
+        $request->validate([
+            'email' => 'required|email|', 
+            'contraseña' => 'required'
+        ]);
+
+        try {
+           $user = User::getUserByEmail($request->get('email'));
+
+            if($user && Hash::check($request->get('contraseña'),$user->contraseña)) {
+                return response('Creedenciales correctas, acceso concedido', 200);
+            } else {
+                return response('Creedenciales incorrectas', 401);
+            }
+
+        } catch (\Exception $e) {
+            return response('Error interno', 500);
+        }
+    }
 }

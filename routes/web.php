@@ -21,3 +21,5 @@ Route::get('/', function () {
 
 Route::get('create-user', 'App\Http\Controllers\UserController@createUser') ->name('user.create'); 
 Route::post('store-user', 'App\Http\Controllers\UserController@storeUser') ->name('user.store'); 
+Route::post('store-user', 'App\Http\Controllers\UserController@storeUser') ->name('user.store'); 
+Route::post('login', 'App\Http\Controllers\UserController@login') ->name('login')->middleware('throttle:login');
