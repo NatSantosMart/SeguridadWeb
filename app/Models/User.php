@@ -5,10 +5,13 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\DB;
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements AuthenticatableContract
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -45,6 +48,8 @@ class User extends Authenticatable
 
     public static function getUserByEmail($email)
     {
-        return DB::table('users')->where('email', $email)->first();
+        return User::where('email', $email)->first();
+
+        //return DB::table('users')->where('email', $email)->first();
     }
 }

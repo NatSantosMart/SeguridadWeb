@@ -32,17 +32,24 @@
                         </div>
                     @endif
 
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
+
                     <div class="form-group row mt-4">
                         <div class="col-12">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" value="{{ old('email') }}" required/>
+                            <input type="text" class="form-control" name="email" value="{{ old('email') }}" />
                         </div>
                     </div>
 
                     <div class="form-group row mt-4">
                         <div class="col-12">
                             <label for="contraseña">Contraseña:</label>
-                            <input type="password" class="form-control" name="password" required/>
+                            <input type="password" class="form-control" name="contraseña" value="{{ old('contraseña') }}" />
                         </div>
                     </div>
 

@@ -20,6 +20,14 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('S3gur1d4d?W3b'),
                 'IBAN' => 'ES9121000418450200051332',
             ],
+            [
+                'name' => 'Lucas',
+                'surnames' => 'Santos Herraiz',
+                'dni' => '24544343E',
+                'email' => 'lucas@gmail.es',
+                'password' => bcrypt('password1234'),
+                'IBAN' => 'ES9121000418450200051332',
+            ],
 
         ];
         DB::table('users')->insert($clients);
