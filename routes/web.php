@@ -23,8 +23,6 @@ Route::get('create-user', 'App\Http\Controllers\UserController@createUser') ->na
 Route::post('store-user', 'App\Http\Controllers\UserController@storeUser') ->name('user.store'); 
 
 Route::get('user-login', 'App\Http\Controllers\UserController@showLoginForm')->name('user.login');
-//Route::post('login', 'App\Http\Controllers\UserController@login') ->name('login')->middleware('throttle:login');
-Route::post('login', 'App\Http\Controllers\UserController@login') ->name('login');
-
+Route::post('login', 'App\Http\Controllers\UserController@login') ->name('login')->middleware('throttle:login');
 
 Route::middleware('auth')->get('user-home', 'App\Http\Controllers\UserController@showHomeForm')->name('user.home');
