@@ -49,7 +49,7 @@
                         </div>
                         <div class="col-6">
                             <label for="email">Email:</label>
-                            <input type="text" class="form-control" name="email" value="{{old('email')}}" required/>
+                            <input type="email" class="form-control" name="email" value="{{old('email')}}" required/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">

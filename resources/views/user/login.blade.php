@@ -42,14 +42,14 @@
                     <div class="form-group row mt-4">
                         <div class="col-12">
                             <label for="email">Email:</label>
-                            <input type="text" class="form-control" name="email" value="{{ old('email') }}" />
+                            <input type="email" class="form-control" name="email" value="{{ old('email') }}" required/>
                         </div>
                     </div>
 
                     <div class="form-group row mt-4">
                         <div class="col-12">
                             <label for="contraseña">Contraseña:</label>
-                            <input type="password" class="form-control" name="contraseña" value="{{ old('contraseña') }}" />
+                            <input type="password" class="form-control" name="contraseña" value="{{ old('contraseña') }}" required/>
                         </div>
                     </div>
 

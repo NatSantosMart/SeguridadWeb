@@ -10,7 +10,6 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        // Sample client data
         $clients = [
             [
                 'name' => 'Carla',
@@ -23,10 +22,19 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Lucas',
                 'surnames' => 'Santos Herraiz',
-                'dni' => '24544343E',
+                'dni' => '14544343E',
                 'email' => 'lucas@gmail.es',
                 'password' => bcrypt('password1234'),
                 'IBAN' => 'ES9121000418450200051332',
+            ],
+            [
+                'name' => 'Marta',
+                'surnames' => 'Cañamares Herraiz',
+                'phone' => '676543456',
+                'dni' => '34544343E',
+                'email' => 'marta@gmail.es',
+                'password' => bcrypt('password1234'),
+                'IBAN' => 'ES9121000418450200051331',
             ],
 
         ];
