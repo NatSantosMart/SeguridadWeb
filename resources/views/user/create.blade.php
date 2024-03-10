@@ -35,41 +35,41 @@
                     <div class="form-group row mt-4">
                         <div class="col-6">
                             <label for="name">Nombre:</label>
-                            <input type="text" class="form-control" name="nombre" value="{{old('nombre')}}" required/>
+                            <input type="text" class="form-control {{ $errors->has('nombre') ? 'is-invalid' : '' }}" name="nombre" value="{{old('nombre')}}" required/>
                         </div>
                         <div class="col-6">
                             <label for="surnames">Apellidos:</label>
-                            <input type="text" class="form-control" name="apellidos" value="{{old('apellidos')}}" required/>
+                            <input type="text" class="form-control {{ $errors->has('apellidos') ? 'is-invalid' : '' }}" name="apellidos" value="{{old('apellidos')}}" required/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <div class="col-6">
                             <label for="dni">Dni:</label>
-                            <input type="text" class="form-control" name="dni" value="{{old('dni')}}" required/>
+                            <input type="text" class="form-control {{ $errors->has('dni') ? 'is-invalid' : '' }}" name="dni" value="{{old('dni')}}" required/>
                         </div>
                         <div class="col-6">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" name="email" value="{{old('email')}}" required/>
+                            <input type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" name="email" value="{{old('email')}}" required/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <div class="col-6">
                             <label for="contraseña">Contraseña:</label>
-                            <input type="text" class="form-control" name="contraseña" value="{{old('contraseña')}}" required/>
+                            <input type="text" class="form-control  {{ $errors->has('contraseña') ? 'is-invalid' : '' }}" name="contraseña" value="{{old('contraseña')}}" required/>
                         </div>
                         <div class="col-6">
                             <label for="contraseñaRepetida">Contraseña repetida:</label>
-                            <input type="text" class="form-control" name="contraseñaRepetida" id="contraseñaRepetida" value="{{old('contraseñaRepetida')}}" required/>
+                            <input type="text" class="form-control  {{ $errors->has('contraseñaRepetida') ? 'is-invalid' : '' }}" name="contraseñaRepetida" id="contraseñaRepetida" value="{{old('contraseñaRepetida')}}" required/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <div class="col-6">
                             <label for="phone">Teléfono:</label>
-                            <input type="text" class="form-control" name="telefono" value="{{old('telefono')}}"/>
+                            <input type="text" class="form-control  {{ $errors->has('telefono') ? 'is-invalid' : '' }}" name="telefono" value="{{old('telefono')}}"/>
                         </div>
                         <div class="col-6">
                             <label for="pais">País:</label>
-                            <select class="form-control" name="pais">
+                            <select class="form-control  {{ $errors->has('pais') ? 'is-invalid' : '' }}" name="pais">
                                 <option value="">Selecciona un país</option>
                                 @foreach ($countries as $id => $name)
                                     <option value="{{ $name }}" {{ old('pais') == $name ? 'selected' : '' }}>{{ $name }}</option>
@@ -81,13 +81,13 @@
                     <div class="form-group row mt-4">
                         <div class="col-12">
                             <label for="iban">Número de cuenta bancaria:</label>
-                            <input type="text" class="form-control" name="iban" value="{{old('iban')}}" required/>
+                            <input type="text" class="form-control {{ $errors->has('iban') ? 'is-invalid' : '' }}" name="iban" value="{{old('iban')}}" required/>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <div class="col-12">
                             <label for="sobreTi">Sobre ti:</label>
-                            <textarea type="text" class="form-control" name="sobreTi">{{ old('sobreTi') }}</textarea>
+                            <textarea type="text" class="form-control {{ $errors->has('sobreTi') ? 'is-invalid' : '' }}" name="sobreTi">{{ old('sobreTi') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
